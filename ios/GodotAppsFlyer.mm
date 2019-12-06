@@ -56,21 +56,21 @@ void GodotAppsFlyer::init(const String& key, const String& appId, const String& 
     [AppsFlyerTracker sharedTracker].isDebug = true;
 #endif
 
-    // [[AppsFlyerTracker sharedTracker] trackAppLaunch];
+    [[AppsFlyerTracker sharedTracker] trackAppLaunch];
 
-    [[AppsFlyerTracker sharedTracker] trackAppLaunchWithCompletionHandler:^(NSDictionary<NSString *,id> *dictionary, NSError *error) {
-        if (error) {
-            NSLog(@"AppsFlyerTracker trackAppLaunch ERROR");
-            NSLog(@"%@", error);
-            return;
-        }
-        if (dictionary) {
-            NSLog(@"AppsFlyerTracker trackAppLaunch SUCCESSFUL");
-            NSLog(@"%@", dictionary);
-            return;
-        }
-        [NSException exceptionWithName:@"fatalError" reason:nil userInfo:nil];
-    }];
+    // [[AppsFlyerTracker sharedTracker] trackAppLaunchWithCompletionHandler:^(NSDictionary<NSString *,id> *dictionary, NSError *error) {
+    //     if (error) {
+    //         NSLog(@"AppsFlyerTracker trackAppLaunch ERROR");
+    //         NSLog(@"%@", error);
+    //         return;
+    //     }
+    //     if (dictionary) {
+    //         NSLog(@"AppsFlyerTracker trackAppLaunch SUCCESSFUL");
+    //         NSLog(@"%@", dictionary);
+    //         return;
+    //     }
+    //     [NSException exceptionWithName:@"fatalError" reason:nil userInfo:nil];
+    // }];
 }
 
 void GodotAppsFlyer::trackEvent(const String& event, const Dictionary& params)
