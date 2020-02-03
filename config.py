@@ -7,6 +7,7 @@ def can_build(env, platform):
 
 def configure(env):
     if (env['platform'] == 'android'):
+        return
         env.android_add_dependency("implementation 'com.appsflyer:af-android-sdk:4+@aar'")
         env.android_add_dependency("implementation 'com.android.installreferrer:installreferrer:1.0'")
         env.android_add_to_permissions("android/AndroidManifestPermissionsChunk.xml")
